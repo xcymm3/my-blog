@@ -1,0 +1,54 @@
+:root {
+  --font-display:
+    "STSong", "Songti SC", "Noto Serif SC", "Source Han Serif SC", "PMingLiU", serif;
+  --font-body:
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --font-outlier: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  --color-surface: oklch(95.8% 0.006 255);
+  --color-paper: oklch(99.2% 0.002 255);
+  --color-card: oklch(99.4% 0.002 255);
+  --color-paper-2: oklch(97.8% 0.004 255);
+  --color-paper-3: oklch(96.1% 0.008 55);
+  --color-ink: oklch(33% 0.045 252);
+  --color-ink-2: oklch(43% 0.03 252);
+  --color-muted: oklch(61% 0.018 252);
+  --color-accent: oklch(70% 0.1 45);
+  --color-accent-ink: oklch(99% 0.002 255);
+  --color-focus: oklch(55% 0.12 250);
+  --color-rule: oklch(86% 0.01 252);
+  --color-rule-strong: oklch(77% 0.012 252);
+  --color-shadow: color-mix(in srgb, #8c97a6 14%, transparent);
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --page-gutter: clamp(1rem, 4vw, 2.25rem);
+  --measure: 42rem;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.875rem;
+  --text-2xl: 2.5rem;
+  --text-display: clamp(2.4rem, 4vw + 1rem, 3.6rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-short: 160ms;
+  --dur-medium: 220ms;
+
+  --rule-hair: 1px;
+  --rule-double: 2px;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}

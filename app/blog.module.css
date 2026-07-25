@@ -1,0 +1,430 @@
+/* Hallmark · pre-emit critique: P4 H5 E4 S4 R5 V4
+ * genre: editorial · macrostructure: Index-First · theme: studied-DNA (source: image)
+ * nav: compact-left-brand · footer: omitted · contrast: pass (40-41) · responsive: pass (34, 49, 50-57)
+ */
+.page {
+  min-height: 100dvh;
+}
+
+.shell {
+  width: min(100%, 120rem);
+  margin: 0 auto;
+}
+
+.masthead {
+  background: var(--color-paper);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.4rem clamp(1.5rem, 3vw, 2.4rem);
+}
+
+.wordmark {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 1.8vw + 1rem, 2.25rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.9rem, 2vw, 2rem);
+  list-style: none;
+}
+
+.navLink,
+.readMoreLink,
+.backLink,
+.titleLink {
+  white-space: nowrap;
+}
+
+.navLink {
+  display: inline-flex;
+  color: var(--color-ink-2);
+  font-family: var(--font-body);
+  font-size: 1.04rem;
+  line-height: 1;
+}
+
+.navLinkActive,
+.navLink:hover,
+.navLink:focus-visible,
+.titleLink:hover,
+.titleLink:focus-visible,
+.readMoreLink:hover,
+.readMoreLink:focus-visible,
+.backLink:hover,
+.backLink:focus-visible {
+  color: var(--color-accent);
+}
+
+.navLink:focus-visible,
+.titleLink:focus-visible,
+.readMoreLink:focus-visible,
+.backLink:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.main {
+  padding: clamp(2rem, 5vw, 3.25rem) var(--page-gutter) clamp(4rem, 8vw, 6rem);
+}
+
+.pageContainer {
+  display: grid;
+  gap: var(--space-xl);
+  width: min(100%, 62rem);
+  margin: 0 auto;
+}
+
+.postGrid {
+  display: grid;
+  gap: var(--space-xl);
+  list-style: none;
+}
+
+.postCard,
+.articleCard,
+.infoCard {
+  background: var(--color-card);
+  border: var(--rule-hair) solid color-mix(in oklch, var(--color-rule) 82%, white);
+  box-shadow: 0 18px 42px -28px var(--color-shadow);
+}
+
+.postCard,
+.articleCard {
+  padding: clamp(1.4rem, 4vw, 2.8rem);
+}
+
+.cardTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: clamp(1.4rem, 3vw, 2rem);
+}
+
+.cardTopLabel,
+.cardTopDate,
+.sectionCaption,
+.articleMeta,
+.postCardMeta,
+.backLink {
+  color: var(--color-muted);
+  font-family: var(--font-outlier);
+  font-size: 0.95rem;
+}
+
+.cardTopLabel,
+.sectionCaption {
+  letter-spacing: 0.08em;
+}
+
+.postCardHeader,
+.articleHeader {
+  display: grid;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.postCardTitle,
+.articleTitle,
+.infoCardTitle {
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.28;
+  overflow-wrap: anywhere;
+}
+
+.postCardTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.titleLink {
+  display: inline;
+}
+
+.postCardMeta,
+.articleMeta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.postCardDivider {
+  height: 1px;
+  margin: clamp(1.4rem, 3vw, 2rem) 0;
+  background: var(--color-rule-strong);
+}
+
+.postCardQuote {
+  padding: 1.1rem 1.25rem;
+  margin-bottom: clamp(1.4rem, 3vw, 2rem);
+  background: var(--color-paper-3);
+  border-left: 4px solid color-mix(in oklch, var(--color-accent) 42%, white);
+}
+
+.postCardQuote p,
+.articleBody p,
+.postCardExcerpt,
+.infoCardText,
+.siteList li {
+  color: var(--color-ink-2);
+  font-size: 1.12rem;
+  line-height: 1.95;
+}
+
+.postCardExcerpt,
+.infoCardText {
+  max-width: none;
+}
+
+.cardActionRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: clamp(1.8rem, 3vw, 2.2rem);
+}
+
+.readMoreLink {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
+.secondarySection {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.articleCard {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.backLink {
+  justify-self: start;
+}
+
+.articleBody {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.articleBody h2,
+.articleBody h3,
+.articleBody h4 {
+  color: var(--color-ink);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.articleBody h2 {
+  font-size: 1.45rem;
+}
+
+.articleBody h3 {
+  font-size: 1.22rem;
+}
+
+.articleSection {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.articleHeading {
+  color: var(--color-ink);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.articleList {
+  display: grid;
+  gap: var(--space-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.articleBody ul,
+.articleBody ol {
+  display: grid;
+  gap: var(--space-xs);
+  padding-left: 1.4rem;
+}
+
+.articleBody ul {
+  list-style: square;
+}
+
+.articleBody ol {
+  list-style: decimal;
+}
+
+.articleBody li,
+.articleList li {
+  color: var(--color-ink-2);
+  font-size: 1.12rem;
+  line-height: 1.95;
+}
+
+.articleBody a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.articleBody blockquote {
+  padding: 1rem 1.2rem;
+  background: var(--color-paper-3);
+  border-left: 4px solid color-mix(in oklch, var(--color-accent) 42%, white);
+}
+
+.articleBody pre {
+  overflow-x: auto;
+  padding: 1rem 1.15rem;
+  background: color-mix(in oklch, var(--color-ink) 7%, white);
+  border-radius: var(--radius-md);
+}
+
+.articleBody code {
+  font-family:
+    "JetBrains Mono", "Fira Code", "Cascadia Code", "SFMono-Regular", Consolas,
+    monospace;
+  font-size: 0.96em;
+}
+
+.articleBody :not(pre) > code {
+  padding: 0.14rem 0.32rem;
+  background: color-mix(in oklch, var(--color-ink) 6%, white);
+  border-radius: var(--radius-sm);
+}
+
+.articleBody table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.articleBody th,
+.articleBody td {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--color-rule);
+  text-align: left;
+}
+
+.articleBody th {
+  color: var(--color-ink);
+  background: color-mix(in oklch, var(--color-paper-2) 88%, white);
+}
+
+.articleBody hr {
+  border: 0;
+  border-top: 1px solid var(--color-rule-strong);
+}
+
+.articleBody img {
+  width: 100%;
+  height: auto;
+  border: var(--rule-hair) solid var(--color-rule);
+}
+
+.infoCard {
+  display: grid;
+  gap: var(--space-md);
+  padding: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.infoCardTitle {
+  text-align: left;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.siteList {
+  display: grid;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.siteListItem {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.9rem 0;
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+
+.siteListItem:last-child {
+  border-bottom: 0;
+}
+
+.siteListLink {
+  color: var(--color-ink);
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+
+.siteListLink:hover,
+.siteListLink:focus-visible {
+  color: var(--color-accent);
+}
+
+.siteListLink:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.siteListNote {
+  color: var(--color-muted);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 48rem) {
+  .headerInner,
+  .cardTopBar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navList {
+    gap: 1rem;
+  }
+
+  .postCardTitle,
+  .articleTitle {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .postCardMeta,
+  .articleMeta {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .postCardHeader,
+  .articleHeader {
+    text-align: left;
+  }
+
+  .cardActionRow {
+    justify-content: flex-start;
+  }
+}
