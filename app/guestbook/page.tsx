@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import styles from "@/app/blog.module.css";
+import { GuestbookBoard } from "@/components/guestbook-board";
 import { SiteShell } from "@/components/site-shell";
 import { siteConfig } from "@/lib/site";
 
@@ -15,14 +16,15 @@ export default function GuestbookPage() {
         <section className={styles.pageContainer}>
           <div className={styles.infoCard}>
             <p className={styles.sectionCaption}>留言</p>
-            <h1 className={styles.infoCardTitle}>
-              这里以后可以放评论、表单或联系方式。
-            </h1>
+            <h1 className={styles.infoCardTitle}>不登录也能用的朋友留言板。</h1>
             <p className={styles.infoCardText}>{siteConfig.guestbookIntro}</p>
             <p className={styles.infoCardText}>
-              如果你暂时只想保留一个安静的占位页，这个版本已经足够自然，不会破坏首页的整体风格。
+              这里现在会把留言直接保存到数据库，默认保留最新 100
+              条，支持按时间正序或倒序查看。
             </p>
           </div>
+
+          <GuestbookBoard />
         </section>
       </main>
     </SiteShell>

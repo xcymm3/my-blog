@@ -397,6 +397,176 @@
   line-height: 1.75;
 }
 
+.guestbookSection {
+  display: grid;
+}
+
+.guestbookCard {
+  display: grid;
+  gap: var(--space-lg);
+  padding: clamp(1.6rem, 4vw, 2.4rem);
+  background: var(--color-card);
+  border: var(--rule-hair) solid color-mix(in oklch, var(--color-rule) 82%, white);
+  box-shadow: 0 18px 42px -28px var(--color-shadow);
+}
+
+.guestbookToolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.guestbookSortGroup {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.guestbookSortButton,
+.guestbookSubmitButton,
+.guestbookDeleteButton {
+  border: var(--rule-hair) solid var(--color-rule);
+  transition:
+    color var(--dur-short) var(--ease-out),
+    border-color var(--dur-short) var(--ease-out),
+    background var(--dur-short) var(--ease-out);
+}
+
+.guestbookSortButton,
+.guestbookDeleteButton {
+  padding: 0.58rem 0.9rem;
+  color: var(--color-ink-2);
+  background: var(--color-paper);
+  font-size: 0.98rem;
+  line-height: 1;
+}
+
+.guestbookSortButton:hover,
+.guestbookSortButton:focus-visible,
+.guestbookDeleteButton:hover,
+.guestbookDeleteButton:focus-visible,
+.guestbookSubmitButton:hover,
+.guestbookSubmitButton:focus-visible {
+  border-color: color-mix(in oklch, var(--color-accent) 58%, white);
+}
+
+.guestbookSortButtonActive {
+  color: var(--color-accent);
+  border-color: color-mix(in oklch, var(--color-accent) 58%, white);
+  background: color-mix(in oklch, var(--color-paper-3) 74%, white);
+}
+
+.guestbookForm {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.guestbookField {
+  display: grid;
+  gap: 0.55rem;
+  color: var(--color-ink);
+  font-size: 0.98rem;
+}
+
+.guestbookInput,
+.guestbookTextarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  border: var(--rule-hair) solid var(--color-rule);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.guestbookInput:focus-visible,
+.guestbookTextarea:focus-visible,
+.guestbookSortButton:focus-visible,
+.guestbookDeleteButton:focus-visible,
+.guestbookSubmitButton:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.guestbookTextarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.guestbookFormFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.guestbookHelperText,
+.guestbookFeedback,
+.guestbookTime {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.guestbookSubmitButton {
+  padding: 0.75rem 1.1rem;
+  color: var(--color-accent-ink);
+  background: var(--color-ink);
+  font-size: 1rem;
+}
+
+.guestbookSubmitButton:disabled,
+.guestbookDeleteButton:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.guestbookList {
+  display: grid;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.guestbookListItem {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem 0 0;
+  border-top: var(--rule-hair) solid var(--color-rule);
+}
+
+.guestbookListHeader,
+.guestbookMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.guestbookMeta {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.guestbookNickname {
+  color: var(--color-ink);
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.guestbookContent {
+  color: var(--color-ink-2);
+  font-size: 1.08rem;
+  line-height: 1.95;
+  white-space: pre-wrap;
+}
+
+.guestbookEmptyState {
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
 @media (max-width: 48rem) {
   .headerInner,
   .cardTopBar {
@@ -426,5 +596,12 @@
 
   .cardActionRow {
     justify-content: flex-start;
+  }
+
+  .guestbookToolbar,
+  .guestbookFormFooter,
+  .guestbookListHeader {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
