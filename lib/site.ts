@@ -1,7 +1,6 @@
 export const siteConfig = {
   description: "一个个人博客示例站点。",
-  guestbookIntro:
-    "这个留言页现在面向朋友开放，不需要登录就能留言，也保留了足够轻的使用方式。",
+  guestbookIntro: "请随便在这里留言，不需要登录哦",
   name: "西出玉门的博客",
   siteIntro: "这里整理了我目前公开可访问的作品，以及持续更新中的 GitHub 主页。",
   siteNote: "后续如果还有新的项目、实验页面或长期维护的作品，我也会加在这里。",

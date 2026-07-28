@@ -154,7 +154,7 @@ export function GuestbookBoard() {
       <div className={styles.guestbookCard}>
         <div className={styles.guestbookToolbar}>
           <div>
-            <p className={styles.sectionCaption}>朋友留言板</p>
+            <p className={styles.sectionCaption}>留言列表</p>
             <p className={styles.guestbookHelperText}>
               匿名可发，最多保留最新 {MAX_GUESTBOOK_MESSAGES} 条。任何人都可以删除。
             </p>

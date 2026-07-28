@@ -355,6 +355,21 @@
   font-size: clamp(1.8rem, 3vw, 2.4rem);
 }
 
+.infoCardHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.guestbookVisitStats {
+  color: var(--color-muted);
+  font-family: var(--font-outlier);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
 .siteList {
   display: grid;
   gap: var(--space-xs);
@@ -600,7 +615,8 @@
 
   .guestbookToolbar,
   .guestbookFormFooter,
-  .guestbookListHeader {
+  .guestbookListHeader,
+  .infoCardHeading {
     align-items: flex-start;
     flex-direction: column;
   }
