@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import styles from "@/app/blog.module.css";
-import { formatDate, getPostPreview, type Post } from "@/lib/posts";
+import { formatDate, type Post } from "@/lib/posts";
 
 type PostPreviewCardProps = {
   post: Post;
@@ -39,13 +39,10 @@ export function PostPreviewCard({ post, topLabel }: PostPreviewCardProps) {
         <p>{post.intro}</p>
       </div>
 
-      <p className={styles.postCardExcerpt}>{getPostPreview(post)}</p>
-
-      <div className={styles.cardActionRow}>
-        <Link href={`/posts/${post.slug}`} className={styles.readMoreLink}>
-          阅读全文
-        </Link>
-      </div>
+      <div
+        className={`${styles.articleBody} ${styles.postCardBody}`}
+        dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+      />
     </article>
   );
 }

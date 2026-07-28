@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   }
 
   return {
-    description: post.summary,
+    description: post.intro,
     title: post.title,
   };
 }

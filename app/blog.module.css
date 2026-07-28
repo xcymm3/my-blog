@@ -44,7 +44,6 @@
 }
 
 .navLink,
-.readMoreLink,
 .backLink,
 .titleLink {
   white-space: nowrap;
@@ -63,8 +62,6 @@
 .navLink:focus-visible,
 .titleLink:hover,
 .titleLink:focus-visible,
-.readMoreLink:hover,
-.readMoreLink:focus-visible,
 .backLink:hover,
 .backLink:focus-visible {
   color: var(--color-accent);
@@ -72,7 +69,6 @@
 
 .navLink:focus-visible,
 .titleLink:focus-visible,
-.readMoreLink:focus-visible,
 .backLink:focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 4px;
@@ -182,7 +178,6 @@
 
 .postCardQuote p,
 .articleBody p,
-.postCardExcerpt,
 .infoCardText,
 .siteList li {
   color: var(--color-ink-2);
@@ -190,20 +185,12 @@
   line-height: 1.95;
 }
 
-.postCardExcerpt,
 .infoCardText {
   max-width: none;
 }
 
-.cardActionRow {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: clamp(1.8rem, 3vw, 2.2rem);
-}
-
-.readMoreLink {
-  color: var(--color-accent);
-  font-size: 1.1rem;
+.postCardBody {
+  margin-top: 0;
 }
 
 .secondarySection {
@@ -607,10 +594,6 @@
   .postCardHeader,
   .articleHeader {
     text-align: left;
-  }
-
-  .cardActionRow {
-    justify-content: flex-start;
   }
 
   .guestbookToolbar,

@@ -12,27 +12,22 @@ type PostFrontmatter = {
   draft?: boolean;
   intro: string;
   publishedAt: string;
-  summary: string;
   tags: string[];
   title: string;
 };
 
 export type Post = {
+  contentHtml: string;
   draft: boolean;
   intro: string;
   publishedAt: string;
   readingTime: string;
   slug: string;
-  summary: string;
   tags: string[];
   title: string;
 };
 
-export type PostDetail = Post & {
-  contentHtml: string;
-};
-
-type ParsedPostFile = Post & {
+type ParsedPostFile = Omit<Post, "contentHtml"> & {
   content: string;
   fileName: string;
 };
@@ -95,7 +90,6 @@ function normalizeFrontmatter(
     draft: typeof data.draft === "boolean" ? data.draft : false,
     intro: normalizeStringValue(data.intro, "intro", slug),
     publishedAt: normalizeDateValue(data.publishedAt, "publishedAt", slug),
-    summary: normalizeStringValue(data.summary, "summary", slug),
     tags: normalizeTags(data.tags, slug),
     title: normalizeStringValue(data.title, "title", slug),
   };
@@ -139,7 +133,6 @@ function parsePostFile(fileName: string): ParsedPostFile {
     publishedAt: frontmatter.publishedAt,
     readingTime: calculateReadingTime(content),
     slug,
-    summary: frontmatter.summary,
     tags: frontmatter.tags,
     title: frontmatter.title,
   };
@@ -158,7 +151,10 @@ export function getPosts() {
     .map(parsePostFile)
     .filter((post) => !post.draft)
     .sort((left, right) => (left.publishedAt < right.publishedAt ? 1 : -1))
-    .map(({ content: _content, fileName: _fileName, ...post }) => post);
+    .map(({ content, fileName: _fileName, ...post }) => ({
+      ...post,
+      contentHtml: renderMarkdown(content),
+    }));
 }
 
 export function getLatestPost() {
@@ -186,11 +182,7 @@ export function getPostBySlug(slug: string) {
   return {
     ...post,
     contentHtml: renderMarkdown(content),
-  } satisfies PostDetail;
-}
-
-export function getPostPreview(post: Post) {
-  return post.summary;
+  } satisfies Post;
 }
 
 export function getRelatedPosts(slug: string) {
