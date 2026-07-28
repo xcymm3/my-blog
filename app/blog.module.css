@@ -169,14 +169,6 @@
   background: var(--color-rule-strong);
 }
 
-.postCardQuote {
-  padding: 1.1rem 1.25rem;
-  margin-bottom: clamp(1.4rem, 3vw, 2rem);
-  background: var(--color-paper-3);
-  border-left: 4px solid color-mix(in oklch, var(--color-accent) 42%, white);
-}
-
-.postCardQuote p,
 .articleBody p,
 .infoCardText,
 .siteList li {

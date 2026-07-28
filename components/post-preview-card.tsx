@@ -35,10 +35,6 @@ export function PostPreviewCard({ post, topLabel }: PostPreviewCardProps) {
 
       <div className={styles.postCardDivider} />
 
-      <div className={styles.postCardQuote}>
-        <p>{post.intro}</p>
-      </div>
-
       <div
         className={`${styles.articleBody} ${styles.postCardBody}`}
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}

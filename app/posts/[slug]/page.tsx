@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   }
 
   return {
-    description: post.intro,
+    description: post.description,
     title: post.title,
   };
 }
@@ -62,10 +62,6 @@ export default async function PostPage({ params }: PostPageProps) {
             </header>
 
             <div className={styles.postCardDivider} />
-
-            <div className={styles.postCardQuote}>
-              <p>{post.intro}</p>
-            </div>
 
             <div
               className={styles.articleBody}

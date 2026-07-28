@@ -10,7 +10,6 @@ const postsDirectory = path.join(process.cwd(), "content", "posts");
 
 type PostFrontmatter = {
   draft?: boolean;
-  intro: string;
   publishedAt: string;
   tags: string[];
   title: string;
@@ -19,10 +18,10 @@ type PostFrontmatter = {
 export type Post = {
   contentHtml: string;
   draft: boolean;
-  intro: string;
   publishedAt: string;
   readingTime: string;
   slug: string;
+  description: string;
   tags: string[];
   title: string;
 };
@@ -88,7 +87,6 @@ function normalizeFrontmatter(
 ): PostFrontmatter {
   return {
     draft: typeof data.draft === "boolean" ? data.draft : false,
-    intro: normalizeStringValue(data.intro, "intro", slug),
     publishedAt: normalizeDateValue(data.publishedAt, "publishedAt", slug),
     tags: normalizeTags(data.tags, slug),
     title: normalizeStringValue(data.title, "title", slug),
@@ -118,6 +116,10 @@ function calculateReadingTime(markdown: string) {
   return `${minutes} 分钟`;
 }
 
+function createDescription(markdown: string) {
+  return stripMarkdown(markdown).slice(0, 160);
+}
+
 function parsePostFile(fileName: string): ParsedPostFile {
   const slug = createSlug(fileName);
   const filePath = path.join(postsDirectory, fileName);
@@ -128,8 +130,8 @@ function parsePostFile(fileName: string): ParsedPostFile {
   return {
     content: content.trim(),
     draft: frontmatter.draft ?? false,
+    description: createDescription(content),
     fileName,
-    intro: frontmatter.intro,
     publishedAt: frontmatter.publishedAt,
     readingTime: calculateReadingTime(content),
     slug,
